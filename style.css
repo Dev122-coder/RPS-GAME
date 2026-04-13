@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: cursive;
+    background: #1a1a2e;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  
+}
+.container {
+    transform: scale(0.9);
+    transform-origin: top center;
+}
+/* ── HEADER ── */
+.header {
+    background: linear-gradient(135deg, #1428ff, #7b2ff7);
+    font-family: cursive;
+    width: 45rem;
+}
+
+.header > img {
+    display: inline-block;
+    height: 3rem;
+    animation: spin 4s linear infinite;
+}
+
+.header > h1 {
+    padding: 1rem;
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+@keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ── NAV / SCOREBOARD ── */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1rem 1.5rem;
+    color: white;
+    font-family: cursive;
+    backdrop-filter: blur(4px);
+}
+
+.nav h1 {
+    font-size: 1.1rem;
+}
+
+.nav span {
+    background: white;
+    color: #1428ff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-left: 8px;
+    transition: transform 0.3s;
+}
+
+/* score bump animation */
+.nav span.bump {
+    animation: bump 0.3s ease;
+}
+
+@keyframes bump {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+
+/* ── HEADING ── */
+h2 {
+    color: white;
+    margin: 1.2rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* ── MAIN CARD ── */
+.main {
+    background: white;
+    border-radius: 1rem;
+    margin: 0 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ── PLAYED TEXT ── */
+.m2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: #555;
+}
+
+.m2 > p {
+    margin: 0.5rem 2rem;
+    font-weight: bold;
+}
+
+/* ── IMAGES ── */
+.m3 {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.m3 > img {
+    height: 150px;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    border: 3px solid #eee;
+    background: #f9f9f9;
+    transition: transform 0.3s;
+}
+/* ── BUTTONS ── */
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.3rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+button {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    background: linear-gradient(135deg, #1428ff, #7b2ff7);
+    border: none;
+    color: white;
+    border-radius: 2rem;
+    font-family: cursive;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(20, 40, 255, 0.3);
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(20, 40, 255, 0.4);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* ── RESET BUTTON ── */
+#resetBtn {
+    background: linear-gradient(135deg, #ff4444, #ff8800);
+    box-shadow: 0 4px 12px rgba(255, 80, 0, 0.3);
+    display: block;
+    width: 90%;
+    margin: 1rem auto 0;
+}
+
+#resetBtn:hover {
+    box-shadow: 0 8px 20px rgba(255, 80, 0, 0.4);
+}
+
+/* ── RESULT BOX ── */
+h3 {
+    display: block;
+    margin: 1.2rem auto;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #7b2ff7, #1428ff);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-family: cursive;
+    box-shadow: 0 4px 20px rgba(123, 47, 247, 0.4);
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* result color states */
+h3.win {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    box-shadow: 0 4px 20px rgba(17, 153, 142, 0.4);
+    color: white;
+}
+
+h3.lose {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    box-shadow: 0 4px 20px rgba(255, 65, 108, 0.4);
+    color: white;
+}
+
+h3.draw {
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    box-shadow: 0 4px 20px rgba(247, 151, 30, 0.4);
+    color: white;
+}
+
+.m3 > img {
+    height: 150px;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    border: 3px solid #eee;
+    background: #f9f9f9;
+    transition: transform 0.3s;
+}
+
+.m3 > img.shake {
+    animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+    0%   { transform: translateY(0); }
+    25%  { transform: translateY(-18px); }
+    50%  { transform: translateY(0); }
+    75%  { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
